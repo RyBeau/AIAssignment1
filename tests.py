@@ -1,244 +1,9 @@
 from search import *
-from superquiz import *
+from AStar import *
 
 
 def test1():
-    print("\nStarting Test 1\n")
-    map_str = """\
-    +-------+
-    |  9  XG|
-    |X XXX  |
-    | S  0FG|
-    +-------+
-    """
-
-    graph = RoutingGraph(map_str)
-
-    print("Starting nodes:", sorted(graph.starting_nodes()))
-    print("Outgoing arcs (available actions) at starting states:")
-    for s in sorted(graph.starting_nodes()):
-        print(s)
-        for arc in graph.outgoing_arcs(s):
-            print("  " + str(arc))
-
-    node = (1, 1, 5)
-    print("\nIs {} goal?".format(node), graph.is_goal(node))
-    print("Outgoing arcs (available actions) at {}:".format(node))
-    for arc in graph.outgoing_arcs(node):
-        print("  " + str(arc))
-
-    node = (1, 7, 2)
-    print("\nIs {} goal?".format(node), graph.is_goal(node))
-    print("Outgoing arcs (available actions) at {}:".format(node))
-    for arc in graph.outgoing_arcs(node):
-        print("  " + str(arc))
-
-    node = (3, 7, 0)
-    print("\nIs {} goal?".format(node), graph.is_goal(node))
-
-    node = (3, 7, math.inf)
-    print("\nIs {} goal?".format(node), graph.is_goal(node))
-
-    node = (3, 6, 5)
-    print("\nIs {} goal?".format(node), graph.is_goal(node))
-    print("Outgoing arcs (available actions) at {}:".format(node))
-    for arc in graph.outgoing_arcs(node):
-        print("  " + str(arc))
-
-    node = (3, 6, 9)
-    print("\nIs {} goal?".format(node), graph.is_goal(node))
-    print("Outgoing arcs (available actions) at {}:".format(node))
-    for arc in graph.outgoing_arcs(node):
-        print("  " + str(arc))
-    print("\nEnd of Test 1\n")
-
-
-def test2():
-    print("\nStarting Test 2\n")
-    map_str = """\
-    +--+
-    |GS|
-    +--+
-    """
-
-    graph = RoutingGraph(map_str)
-
-    print("Starting nodes:", sorted(graph.starting_nodes()))
-    print("Outgoing arcs (available actions) at the start:")
-    for start in graph.starting_nodes():
-        for arc in graph.outgoing_arcs(start):
-            print("  " + str(arc))
-
-    node = (1, 1, 1)
-    print("\nIs {} goal?".format(node), graph.is_goal(node))
-    print("Outgoing arcs (available actions) at {}:".format(node))
-    for arc in graph.outgoing_arcs(node):
-        print("  " + str(arc))
-    print("\nEnd of Test 2\n")
-
-
-def test3():
-    print("\nStarting Test 3\n")
-    map_str = """\
-    +------+
-    |S    S|
-    |  GXXX|
-    |S     |
-    +------+
-    """
-
-    graph = RoutingGraph(map_str)
-    print("Starting nodes:", sorted(graph.starting_nodes()))
-    print("\nEnd of Test 3\n")
-
-
-def test4():
-    map_str = """\
-    +-------+
-    |   G   |
-    |       |
-    |   S   |
-    +-------+
-    """
-
-    map_graph = RoutingGraph(map_str)
-    frontier = AStarFrontier(map_graph)
-    solution = next(generic_search(map_graph, frontier), None)
-    print_actions(solution)
-
-
-def test5():
-    map_str = """\
-    +-------+
-    |  GG   |
-    |S    G |
-    |  S    |
-    +-------+
-    """
-
-    map_graph = RoutingGraph(map_str)
-    frontier = AStarFrontier(map_graph)
-    solution = next(generic_search(map_graph, frontier), None)
-    print_actions(solution)
-
-
-def test6():
-    map_str = """\
-    +-------+
-    |     XG|
-    |X XXX  |
-    | S     |
-    +-------+
-    """
-
-    map_graph = RoutingGraph(map_str)
-    frontier = AStarFrontier(map_graph)
-    solution = next(generic_search(map_graph, frontier), None)
-    print_actions(solution)
-
-
-def test8():
-    map_str = """\
-    +----------+
-    |    X     |
-    | S  X  G  |
-    |    X     |
-    +----------+
-    """
-
-    map_graph = RoutingGraph(map_str)
-    frontier = AStarFrontier(map_graph)
-    solution = next(generic_search(map_graph, frontier), None)
-    print_actions(solution)
-
-
-def test7():
-    map_str = """\
-    +-------+
-    |  F  X |
-    |X XXXXG|
-    | 3     |
-    +-------+
-    """
-
-    map_graph = RoutingGraph(map_str)
-    frontier = AStarFrontier(map_graph)
-    solution = next(generic_search(map_graph, frontier), None)
-    print_actions(solution)
-
-
-def test9():
-    map_str = """\
-    +--+
-    |GS|
-    +--+
-    """
-    map_graph = RoutingGraph(map_str)
-    frontier = AStarFrontier(map_graph)
-    solution = next(generic_search(map_graph, frontier), None)
-    print_actions(solution)
-
-
-def test10():
-    map_str = """\
-    +---+
-    |GF2|
-    +---+
-    """
-    map_graph = RoutingGraph(map_str)
-    frontier = AStarFrontier(map_graph)
-    solution = next(generic_search(map_graph, frontier), None)
-    print_actions(solution)
-
-
-def test11():
-    map_str = """\
-    +----+
-    | S  |
-    | SX |
-    |GX G|
-    +----+
-    """
-
-    map_graph = RoutingGraph(map_str)
-    frontier = AStarFrontier(map_graph)
-    solution = next(generic_search(map_graph, frontier), None)
-    print_actions(solution)
-
-
-def test12():
-    map_str = """\
-    +---------+
-    |         |
-    |    G    |
-    |         |
-    +---------+
-    """
-
-    map_graph = RoutingGraph(map_str)
-    frontier = AStarFrontier(map_graph)
-    solution = next(generic_search(map_graph, frontier), None)
-    print_actions(solution)
-
-
-def test13():
-    map_str = """\
-    +----------------+
-    |2              F|
-    |XX     G 123    |
-    |3XXXXXXXXXXXXXX |
-    |  F             |
-    |          F     |
-    +----------------+
-    """
-
-    map_graph = RoutingGraph(map_str)
-    frontier = AStarFrontier(map_graph)
-    solution = next(generic_search(map_graph, frontier), None)
-    print_actions(solution)
-
-
-def test14():
+    print("Test 1\n Map:")
     map_str = """\
     +----------------+
     |                |
@@ -256,14 +21,16 @@ def test14():
     |                |
     +----------------+
     """
-
+    print(map_str)
     map_graph = RoutingGraph(map_str)
     frontier = AStarFrontier(map_graph)
     solution = next(generic_search(map_graph, frontier), None)
+    print("Solution:")
     print_map(map_graph, frontier, solution)
 
 
-def test15():
+def test2():
+    print("Test 2\n Map:")
     map_str = """\
     +----------------+
     |                |
@@ -292,7 +59,8 @@ def test15():
     print_map(map_graph, frontier, solution)
 
 
-def test16():
+def test3():
+    print("Test 3\n Map:")
     map_str = """\
     +-------------+
     | G         G |
@@ -307,7 +75,8 @@ def test16():
     print_map(map_graph, frontier, solution)
 
 
-def test17():
+def test4():
+    print("Test 4\n Map:")
     map_str = """\
         +-------+
         |     XG|
@@ -321,7 +90,8 @@ def test17():
     print_map(map_graph, frontier, solution)
 
 
-def test18():
+def test5():
+    print("Test 5\n Map:")
     map_str = """\
     +--+
     |GS|
@@ -333,7 +103,8 @@ def test18():
     print_map(map_graph, frontier, solution)
 
 
-def test19():
+def test6():
+    print("Test 6\n Map:")
     map_str = """\
     +----+
     |    |
@@ -348,7 +119,8 @@ def test19():
     print_map(map_graph, frontier, solution)
 
 
-def test20():
+def test7():
+    print("Test 7\n Map:")
     map_str = """\
     +---------------+
     |    G          |
@@ -367,7 +139,9 @@ def test20():
     solution = next(generic_search(map_graph, frontier), None)
     print_map(map_graph, frontier, solution)
 
-def test21():
+
+def test8():
+    print("Test 8\n Map:")
     map_str = """\
     +---------+
     |         |
@@ -382,31 +156,12 @@ def test21():
     print_map(map_graph, frontier, solution)
 
 
-def q1():
+def run_all_tests():
     test1()
     test2()
     test3()
     test4()
-
-
-def q2():
     test5()
     test6()
     test7()
-    test9()
-    test10()
-    test11()
-    test12()
     test8()
-    test13()
-
-
-def q3():
-    test14()
-    test15()
-    test16()
-    test17()
-    test18()
-    test19()
-    test20()
-    test21()

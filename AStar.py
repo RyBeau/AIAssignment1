@@ -150,5 +150,5 @@ def print_map(graph, frontier, solution):
 
 
 if __name__ == "__main__":
-    q3()
+    run_all_tests()
 
