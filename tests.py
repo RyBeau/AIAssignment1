@@ -1,5 +1,5 @@
-from lab2.search import *
-from superquiz1.superquiz import *
+from search import *
+from superquiz import *
 
 
 def test1():

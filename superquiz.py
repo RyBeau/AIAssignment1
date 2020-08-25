@@ -1,5 +1,5 @@
-from lab2.search import *
-from superquiz1.tests import *
+from search import *
+from tests import *
 import math
 import heapq
 
