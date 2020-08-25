@@ -1,5 +1,6 @@
 # Artificial Intelligence Assignment 1
 [![Run on Repl.it](https://repl.it/badge/github/RyBeau/AIAssignment1)](https://repl.it/github/RyBeau/AIAssignment1)
+
 This is the code for the my submission for the first Assignment SuperQuiz for COSC367. For this assignment we were presented
 with map that represented a starting position and a goal/goals to get to. We had to write a class to represent these maps
 (RoutingGraph) and then an AStar graph search frontier to be used to search the RoutingGraph to find the solution.
@@ -52,7 +53,9 @@ Below is an example of a solution string.
 
 ## Demo
 tests.py contains some of the tests from the Quiz Server. To demo this project you can download the repo and run tests.py.
-You can also run it online here: [![Run on Repl.it](https://repl.it/badge/github/RyBeau/AIAssignment1)](https://repl.it/github/RyBeau/AIAssignment1)
+You can also run it online here: 
+
+[![Run on Repl.it](https://repl.it/badge/github/RyBeau/AIAssignment1)](https://repl.it/github/RyBeau/AIAssignment1)
 
 #### Search.py
 This was provided during the course an provides various classes and abstract classes related to graphs and graph searching.
