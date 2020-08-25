@@ -48,13 +48,13 @@ def test2():
     |                |
     +----------------+
     """
-
+    print(map_str)
     map_graph = RoutingGraph(map_str)
     # changing the heuristic so the search behaves like LCFS
     map_graph.estimated_cost_to_goal = lambda node: 0
 
     frontier = AStarFrontier(map_graph)
-
+    print("Solution:")
     solution = next(generic_search(map_graph, frontier), None)
     print_map(map_graph, frontier, solution)
 
@@ -68,10 +68,11 @@ def test3():
     | G         G |
     +-------------+
     """
-
+    print(map_str)
     map_graph = RoutingGraph(map_str)
     frontier = AStarFrontier(map_graph)
     solution = next(generic_search(map_graph, frontier), None)
+    print("Solution:")
     print_map(map_graph, frontier, solution)
 
 
@@ -84,9 +85,11 @@ def test4():
         |  S    |
         +-------+
         """
+    print(map_str)
     map_graph = RoutingGraph(map_str)
     frontier = AStarFrontier(map_graph)
     solution = next(generic_search(map_graph, frontier), None)
+    print("Solution:")
     print_map(map_graph, frontier, solution)
 
 
@@ -97,9 +100,11 @@ def test5():
     |GS|
     +--+
     """
+    print(map_str)
     map_graph = RoutingGraph(map_str)
     frontier = AStarFrontier(map_graph)
     solution = next(generic_search(map_graph, frontier), None)
+    print("Solution:")
     print_map(map_graph, frontier, solution)
 
 
@@ -112,10 +117,11 @@ def test6():
     | X G|
     +----+
     """
-
+    print(map_str)
     map_graph = RoutingGraph(map_str)
     frontier = AStarFrontier(map_graph)
     solution = next(generic_search(map_graph, frontier), None)
+    print("Solution:")
     print_map(map_graph, frontier, solution)
 
 
@@ -133,10 +139,11 @@ def test7():
     |               |
     +---------------+
     """
-
+    print(map_str)
     map_graph = RoutingGraph(map_str)
     frontier = AStarFrontier(map_graph)
     solution = next(generic_search(map_graph, frontier), None)
+    print("Solution:")
     print_map(map_graph, frontier, solution)
 
 
@@ -149,10 +156,11 @@ def test8():
     |         |
     +---------+
     """
-
+    print(map_str)
     map_graph = RoutingGraph(map_str)
     frontier = AStarFrontier(map_graph)
     solution = next(generic_search(map_graph, frontier), None)
+    print("Solution:")
     print_map(map_graph, frontier, solution)
 
 
