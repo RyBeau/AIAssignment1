@@ -31,6 +31,7 @@ def test1():
 
 def test2():
     print("Test 2\n Map:")
+    print("This test uses a Lowest Cost First Search Frontier")
     map_str = """\
     +----------------+
     |                |
@@ -173,3 +174,7 @@ def run_all_tests():
     test6()
     test7()
     test8()
+
+
+if __name__ == "__main__":
+    run_all_tests()
